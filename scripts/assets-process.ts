@@ -50,6 +50,9 @@ function processHtmlFile(filePath: string): void {
       addCloudflareMetaTags($);
     }
 
+    // Move all script tags from head to bottom of body
+    moveScriptsToBodyBottom($);
+
     fs.writeFileSync(filePath, $.html());
     console.log(`Processed: ${filePath}`);
   } catch (error) {
@@ -134,6 +137,39 @@ function addCloudflareMetaTags($: cheerio.CheerioAPI): void {
     <meta name="build-date" content="${buildDate}">
     <meta name="version" content="${version}">
   `);
+}
+
+/**
+ * Move all script tags from head to the bottom of body
+ * 
+ * Cloudflare will embed all style and script files in one HTML in the 
+ * final error page. However, this will break Next.js's script defer behavior.
+ * 
+ * By putting all script tags to the bottom, we create a similar behavior to 
+ * defer with Cloudflare created inline scripts.
+ */
+function moveScriptsToBodyBottom($: cheerio.CheerioAPI): void {
+  // Find all script tags in the head
+  const headScripts = $("head script");
+
+  if (headScripts.length === 0) {
+    return;
+  }
+
+  // Create an array to preserve script order
+  const scriptElements: cheerio.Element[] = [];
+
+  headScripts.each((_, element) => {
+    scriptElements.push(element);
+  });
+
+  // Remove scripts from head
+  headScripts.remove();
+
+  // Append all scripts to the bottom of body (before the closing body tag)
+  for (const script of scriptElements) {
+    $("body").append(script);
+  }
 }
 
 function main() {
