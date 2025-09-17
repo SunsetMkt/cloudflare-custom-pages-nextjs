@@ -141,11 +141,11 @@ function addCloudflareMetaTags($: cheerio.CheerioAPI): void {
 
 /**
  * Move all script tags from head to the bottom of body
- * 
- * Cloudflare will embed all style and script files in one HTML in the 
+ *
+ * Cloudflare will embed all style and script files in one HTML in the
  * final error page. However, this will break Next.js's script defer behavior.
- * 
- * By putting all script tags to the bottom, we create a similar behavior to 
+ *
+ * By putting all script tags to the bottom, we create a similar behavior to
  * defer with Cloudflare created inline scripts.
  */
 function moveScriptsToBodyBottom($: cheerio.CheerioAPI): void {

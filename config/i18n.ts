@@ -12,85 +12,95 @@ export interface ErrorPageTranslation extends PageTranslation {}
 export interface ChallengePageTranslation extends PageTranslation {}
 
 // 定义语言类型
-type Language = 'en' | 'zh-CN' | 'zh-TW';
+type Language = "en" | "zh-CN" | "zh-TW";
 
 // 定义不同语言的翻译对象
-const translations: Record<Language, {
-  blockPageTranslations: Record<string, BlockPageTranslation>;
-  errorPageTranslations: Record<string, ErrorPageTranslation>;
-  challengePageTranslations: Record<string, ChallengePageTranslation>;
-  interfaceTranslations: Record<string, InterfaceTranslations>;
-}> = {
-  'en': {
+const translations: Record<
+  Language,
+  {
+    blockPageTranslations: Record<string, BlockPageTranslation>;
+    errorPageTranslations: Record<string, ErrorPageTranslation>;
+    challengePageTranslations: Record<string, ChallengePageTranslation>;
+    interfaceTranslations: Record<string, InterfaceTranslations>;
+  }
+> = {
+  en: {
     blockPageTranslations: {
       ip: {
         title: "Access Denied",
-        message: "Your IP address has been blocked by the website administrator."
+        message:
+          "Your IP address has been blocked by the website administrator.",
       },
       waf: {
         title: "Security Block",
-        message: "Your request was blocked by Cloudflare's Web Application Firewall (WAF)."
+        message:
+          "Your request was blocked by Cloudflare's Web Application Firewall (WAF).",
       },
       "rate-limit": {
         title: "Rate Limit Exceeded",
-        message: "You have exceeded the request rate limit. Please try again later."
-      }
+        message:
+          "You have exceeded the request rate limit. Please try again later.",
+      },
     },
     errorPageTranslations: {
       "500s": {
         title: "Server Error",
-        message: "The website encountered an unexpected error. Please try again later."
+        message:
+          "The website encountered an unexpected error. Please try again later.",
       },
       "1000s": {
-        title: "DNS Resolution Error",
-        message: "The requested domain name could not be resolved. Don't worry, this is not your fault."
-      }
+        title: "Cloudflare Error",
+        message:
+          "Cloudflare CDN occurred an error while processing your request. Don't worry, this is not your fault.",
+      },
     },
     challengePageTranslations: {
       interactive: {
         title: "Human Verification Required",
-        message: "Please complete the CAPTCHA to access the website."
+        message: "Please complete the CAPTCHA to access the website.",
       },
       managed: {
         title: "Under Attack Protection",
-        message: "Complete the CAPTCHA to continue. This is a standard security check."
+        message:
+          "Complete the CAPTCHA to continue. This is a standard security check.",
       },
       country: {
         title: "Regional Access Restriction",
-        message: "Additional verification is required for visitors from your region."
+        message:
+          "Additional verification is required for visitors from your region.",
       },
       javascript: {
         title: "Security Verification",
-        message: "Please wait while our security system verifies your request."
-      }
+        message: "Please wait while our security system verifies your request.",
+      },
     },
     interfaceTranslations: {
       "error-details": {
-        message: "View Details"
+        message: "View Details",
       },
       "connection-tracking": {
-        message: "Connection Trace"
+        message: "Connection Trace",
       },
       "network-status-you": {
-        message: "You"
+        message: "You",
       },
       "network-status-cdn": {
-        message: "CDN"
+        message: "CDN",
       },
       "network-status-origin": {
-        message: "Origin"
-      }
-    }
+        message: "Origin",
+      },
+    },
   },
-  'zh-CN': {
+  "zh-CN": {
     blockPageTranslations: {
       ip: {
         title: "访问被拒绝",
-        message: "您的IP地址已被网站管理员屏蔽。",
+        message: "您的 IP 地址已被网站管理员屏蔽。",
       },
       waf: {
         title: "安全拦截",
-        message: "您的请求被Cloudflare Web应用防火墙(WAF)拦截。",
+        message: "您的请求被 Cloudflare Web 应用防火墙 (WAF) 拦截。",
       },
       "rate-limit": {
         title: "请求频率超限",
@@ -103,8 +113,9 @@ const translations: Record<Language, {
         message: "网站遇到意外错误，请稍后再试。",
       },
       "1000s": {
-        title: "DNS解析错误",
-        message: "无法解析请求的域名，别担心，这不是您的问题。",
+        title: "Cloudflare 错误",
+        message:
+          "Cloudflare CDN 在处理您的请求时发生错误。别担心，这不是您的问题。",
       },
     },
     challengePageTranslations: {
@@ -133,25 +144,25 @@ const translations: Record<Language, {
         message: "连接追踪",
       },
       "network-status-you": {
-        message: "You",
+        message: "您",
       },
       "network-status-cdn": {
         message: "CDN",
       },
       "network-status-origin": {
-        message: "Origin",
+        message: "源服务器",
       },
     },
   },
-  'zh-TW': {
+  "zh-TW": {
     blockPageTranslations: {
       ip: {
         title: "存取遭拒",
-        message: "您的IP位址已被網站管理員封鎖。",
+        message: "您的 IP 位址已被網站管理員封鎖。",
       },
       waf: {
         title: "安全攔截",
-        message: "您的請求被Cloudflare Web應用防火牆(WAF)攔截。",
+        message: "您的請求被 Cloudflare Web 應用防火牆 (WAF) 攔截。",
       },
       "rate-limit": {
         title: "請求速率超限",
@@ -164,8 +175,9 @@ const translations: Record<Language, {
         message: "網站遇到意外錯誤，請稍後再試。",
       },
       "1000s": {
-        title: "DNS解析錯誤",
-        message: "無法解析請求的域名，別擔心，這不是您的問題。",
+        title: "Cloudflare 錯誤",
+        message:
+          "Cloudflare CDN 在處理您的請求時發生錯誤。別擔心，這不是您的問題。",
       },
     },
     challengePageTranslations: {
@@ -194,20 +206,20 @@ const translations: Record<Language, {
         message: "連線追蹤",
       },
       "network-status-you": {
-        message: "You",
+        message: "您",
       },
       "network-status-cdn": {
         message: "CDN",
       },
       "network-status-origin": {
-        message: "Origin",
+        message: "源伺服器",
       },
     },
   },
 };
 
 // 使用简体中文作为默认语言
-const activeLanguage: Language = 'zh-CN';
+const activeLanguage: Language = "zh-CN";
 
 // 获取当前语言的翻译函数
 const getTranslations = (language: Language = activeLanguage) => {
@@ -219,7 +231,7 @@ const {
   blockPageTranslations,
   errorPageTranslations,
   challengePageTranslations,
-  interfaceTranslations
+  interfaceTranslations,
 } = getTranslations(activeLanguage);
 
 // 导出当前活动语言和翻译函数
@@ -229,5 +241,5 @@ export {
   challengePageTranslations,
   interfaceTranslations,
   getTranslations,
-  activeLanguage
+  activeLanguage,
 };
