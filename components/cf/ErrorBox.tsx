@@ -9,6 +9,10 @@ import { CFCardWrap } from "./ui/CFCardWrapper";
 import { NetworkStatusBox } from "./ui/NetworkStatusBox";
 import { NetworkStatusWrapper } from "./ui/NetworkStatusWrapper";
 
+function wrapPlaceholder(name: string) {
+  return `::${name}::`;
+}
+
 export const ErrorBox = ({
   type,
   code,
@@ -38,13 +42,13 @@ export const ErrorBox = ({
         {/* 隐藏的 Cloudflare 错误占位符，仅用于服务端注入 */}
         {type === "1000s" && (
           <div id="cf-error-1000s-box" className="sr-only" aria-hidden="true">
-            ::CLOUDFLARE_ERROR_1000S_BOX::
+            {wrapPlaceholder("CLOUDFLARE_ERROR_1000S_BOX")}
           </div>
         )}
 
         {type === "500s" && (
           <div id="cf-error-500s-box" className="sr-only" aria-hidden="true">
-            ::CLOUDFLARE_ERROR_500S_BOX::
+            {wrapPlaceholder("CLOUDFLARE_ERROR_500S_BOX")}
           </div>
         )}
 
