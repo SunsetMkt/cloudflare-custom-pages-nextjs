@@ -45,7 +45,7 @@ export const CFCard = ({
   return (
     <Card
       suppressHydrationWarning
-      className="max-w-xl mx-auto overflow-hidden bg-white dark:bg-gray-900 shadow-xl ring-1 ring-gray-900/5 dark:ring-gray-800 m-2 sm:m-4 rounded-xl"
+      className="max-w-xl mx-auto overflow-hidden bg-white dark:bg-gray-900 shadow-xl ring-1 ring-gray-900/5 dark:ring-gray-800 m-2 sm:m-4 rounded-xl md:min-w-[600px]"
     >
       <CardHeader
         className={cx("relative p-4 sm:p-6 rounded-t-xl", headerClassName)}

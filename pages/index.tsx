@@ -7,7 +7,7 @@ import { Divider } from "@heroui/divider";
 
 export default function Home() {
   return (
-    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
       <div className="flex min-h-screen flex-col bg-gradient-to-br from-gray-50/50 via-blue-50/10 to-blue-50/30 dark:from-gray-900 dark:to-gray-950 dark:via-blue-950/10">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-10 pt-6 sm:pt-8 md:pt-10 lg:pt-12">
           <Hero className="animate-fade-down animate-once animate-duration-1000 animate-ease-in-out" />

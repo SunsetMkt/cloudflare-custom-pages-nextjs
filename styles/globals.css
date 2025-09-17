@@ -56,3 +56,13 @@ pre {
     opacity: 0;
   }
 }
+
+.dotted-background {
+  background-image: radial-gradient(#ccc 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .dotted-background {
+  background-image: radial-gradient(#555 1px, transparent 1px);
+  background-size: 20px 20px;
+}

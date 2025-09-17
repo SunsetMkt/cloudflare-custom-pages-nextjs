@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
       <Head>
         <title>{siteConfig.name}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -22,7 +22,7 @@ export default function Custom404() {
   };
 
   return (
-    <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+    <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
       <CFLayout>
         <div className="space-y-6">
           <ErrorBox {...config} />
